@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data e Hora Atual</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Data e Hora Atual</h1>
+  <p>A data e hora atuais são: <strong id="dataHora"></strong></p>
+
+  <script>
+    function obterDataHora() {
+      const dataAtual = new Date();
+      const dataFormatada = dataAtual.toLocaleString('pt-BR', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+        hour: 'numeric', minute: 'numeric', second: 'numeric'
+      });
+
+      document.getElementById("dataHora").textContent = dataFormatada;
+    }
+
+    // Chama a função ao carregar a página
+    obterDataHora();
+  </script>
+</body>
+</html>
